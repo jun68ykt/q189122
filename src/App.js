@@ -1,11 +1,11 @@
 import React from 'react';
-import Fluits from './Fluits';
+import Fruits from './Fruits';
 
 function App() {
   return (
     <div className="App">
-      <Fluits
-        fluitsList={['peach', 'apple', 'orange', 'banana', ]}
+      <Fruits
+        fruitsList={['peach', 'apple', 'orange', 'banana', ]}
       />
     </div>
   );

@@ -4,9 +4,9 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from 'redux-logger'
 import { Provider } from "react-redux";
 import App from './App';
-import { fluitsReducer } from './fluits_ducks';
+import { fruitsReducer } from './fruits_ducks';
 
-const reducer = combineReducers({ fluits: fluitsReducer });
+const reducer = combineReducers({ fruits: fruitsReducer });
 
 const store = createStore(
   reducer,

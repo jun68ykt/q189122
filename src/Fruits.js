@@ -1,21 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { LIKE_FLUITS } from './fluits_ducks';
+import { LIKE_FRUITS } from './fruits_ducks';
 
 const Sample = styled.p`
   padding: 5px;
   background-color: #ccc;
 `;
 
-const ExampleFluits = (props) => (
+const ExampleFruits = (props) => (
   <>
-  {props.fluitsList.map((item, idx) => (
+  {props.fruitsList.map((item, idx) => (
       <Sample
         key={item}
         onClick={(e)=>{
           console.log(`${e.target.innerText} was cliked`);
-          props.likeFluits(props.item);
+          props.likeFruits(props.item);
         }}>
         {item}
       </Sample>
@@ -24,19 +24,19 @@ const ExampleFluits = (props) => (
   </>
 );
 
-class Fluits extends React.Component {
+class Fruits extends React.Component {
   render() {
     return (
-      <ExampleFluits
-        fluitsList={this.props.fluitsList}
-        likeFluits={(e) => this.props.likeFluits(this.props.fluitsList)}
+      <ExampleFruits
+        fruitsList={this.props.fruitsList}
+        likeFruits={(e) => this.props.likeFruits(this.props.fruitsList)}
       />
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  likeFluits: (queryStore) => dispatch(LIKE_FLUITS(queryStore)),
+  likeFruits: (queryStore) => dispatch(LIKE_FRUITS(queryStore)),
 });
 
-export default connect(null, mapDispatchToProps)(Fluits);
+export default connect(null, mapDispatchToProps)(Fruits);

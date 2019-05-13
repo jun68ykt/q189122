@@ -1,17 +1,17 @@
-const LIKE_FLUITS_ACTION = 'app/q189122/LIKE_FLUITS';
+const LIKE_FRUITS_ACTION = 'app/q189122/LIKE_FRUITS';
 
-const LIKE_FLUITS = (queryStore) => ({
-  type: LIKE_FLUITS_ACTION,
+const LIKE_FRUITS = (queryStore) => ({
+  type: LIKE_FRUITS_ACTION,
   queryStore,
 });
 
-const fluitsReducer = (state = [], action) => {
+const fruitsReducer = (state = [], action) => {
   switch(action.type) {
-    case LIKE_FLUITS_ACTION:
+    case LIKE_FRUITS_ACTION:
       return [...state, action.queryStore];
     default:
       return state;
   }
 };
 
-export { LIKE_FLUITS, fluitsReducer, }
+export { LIKE_FRUITS, fruitsReducer, }
