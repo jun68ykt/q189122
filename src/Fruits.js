@@ -8,15 +8,13 @@ const Sample = styled.p`
   background-color: #ccc;
 `;
 
-const ExampleFruits = (props) => (
+const ExampleFruits = ({ fruitsList, likeFruits }) => (
   <>
-  {props.fruitsList.map((item, idx) => (
+  {fruitsList.map(item => (
       <Sample
         key={item}
-        onClick={(e)=>{
-          console.log(`${e.target.innerText} was cliked`);
-          props.likeFruits(props.item);
-        }}>
+        onClick={() => { likeFruits(item); }}
+      >
         {item}
       </Sample>
     ))
@@ -26,10 +24,12 @@ const ExampleFruits = (props) => (
 
 class Fruits extends React.Component {
   render() {
+    const { fruitsList, likeFruits } = this.props;
+
     return (
       <ExampleFruits
-        fruitsList={this.props.fruitsList}
-        likeFruits={(e) => this.props.likeFruits(this.props.fruitsList)}
+        fruitsList={fruitsList}
+        likeFruits={item => likeFruits(item)}
       />
     );
   }
